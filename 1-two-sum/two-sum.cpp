@@ -8,20 +8,42 @@ public:
         //SC-O(N)
 
 
-        map<int,int> mpp;
-        int n =nums.size();
-        for(int i = 0; i<n; i++){
+        // map<int,int> mpp;
+        // int n = nums.size();
+        // for(int i = 0; i<n; i++){
+        //     int num = nums[i];
+        //     int moreNeeded = target - num;
+        //     if (mpp.find(moreNeeded)!= mpp.end()) {
+        //         return{mpp[moreNeeded], i};
+        //     }
+        //     mpp[num] = i;
+
+        // }
+
+        // return {-1,1};
+
+        map<int,int> mp;
+        int n  = nums.size();
+        for(int i = 0; i < n; i++){
             int num = nums[i];
             int moreNeeded = target - num;
-            if (mpp.find(moreNeeded)!= mpp.end()) {
-                return{mpp[moreNeeded], i};
-            }
-            mpp[num] = i;
-
-        }
-
-           return {-1,1};
+            if(mp.find(moreNeeded) != mp.end()){
+                return{mp[moreNeeded], i};
         
+            }
+
+            mp[num] =i ;
+        }
+        
+       
+       return {-1,1} ;
+    }
+};
+
+
+
+
+
 
        // More better the previous one solution
 
@@ -37,6 +59,5 @@ public:
     //     else right--;
     //    }
     // return "NO";
+
     
-    }
-};
