@@ -1,6 +1,10 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
+
+
+
+    //Use Moore's voting algo for this ques
         int candidate, count = 0, n = nums.size();
         for(int i = 0; i < n; i++) {
             if(count == 0) candidate = nums[i];
