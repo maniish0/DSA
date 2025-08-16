@@ -1,16 +1,23 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
+        int n = nums.size();
+        int count = 0;
+        int maj = 0;  // initialize properly
 
-
-
-    //Use Moore's voting algo for this ques
-        int candidate, count = 0, n = nums.size();
-        for(int i = 0; i < n; i++) {
-            if(count == 0) candidate = nums[i];
-            if(nums[i] == candidate) count++;
-            else count--;
+        for (int i = 0; i < n; i++) {
+            if (count == 0) {
+                maj = nums[i];  // assume new candidate
+                count = 1;
+            } 
+            else if (nums[i] == maj) {
+                count++;
+            } 
+            else {
+                count--;
+            }
         }
-        return candidate;
+
+        return maj;
     }
 };
