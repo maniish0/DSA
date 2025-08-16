@@ -2,23 +2,38 @@ class Solution {
 public:
     int majorityElement(vector<int>& nums) {
 
-    //moore
+    //moore's voting algo use kro 
+        // int n = nums.size();
+        // int count = 0;
+        // int maj = 0;  // initialize properly
         int n = nums.size();
         int count = 0;
-        int maj = 0;  // initialize properly
-
+        int maj = 0;
         for (int i = 0; i < n; i++) {
-            if (count == 0) {
-                maj = nums[i];  // assume new candidate
+            if(count == 0){
+                maj = nums[i];
                 count = 1;
-            } 
-            else if (nums[i] == maj) {
+            }
+            else if(nums[i] == maj){
                 count++;
-            } 
-            else {
+            }
+            else{
                 count--;
             }
         }
+
+        // for (int i = 0; i < n; i++) {
+        //     if (count == 0) {
+        //         maj = nums[i];  // assume new candidate
+        //         count = 1;
+        //     } 
+        //     else if (nums[i] == maj) {
+        //         count++;
+        //     } 
+        //     else {
+        //         count--;
+        //     }
+        // }
 
         return maj;
     }
