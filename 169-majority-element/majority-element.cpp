@@ -1,6 +1,8 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
+
+    //moore
         int n = nums.size();
         int count = 0;
         int maj = 0;  // initialize properly
