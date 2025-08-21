@@ -6,12 +6,12 @@ public:
         for(int i=0;i<n;i++) //Loop through all elements of nums
 
         {
-            temp[(i+k)%n] = nums[i]; //Move nums[i] to its new position
+          temp[(i+k)%n] = nums[i];//Move nums[i] to its new position
         }
         nums = temp; //Copy temp back to nums
         
     }
 };
 
-//for more check out the TG!
+//for better explanation checkout the TG!
 
