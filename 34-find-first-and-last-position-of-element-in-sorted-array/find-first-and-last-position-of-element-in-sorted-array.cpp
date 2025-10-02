@@ -18,38 +18,37 @@ public:
             }
         }
 
-        // int low = 0, high = n-1;
-        // while(low <= high){
-      
-        // int mid = low +(high - low)/2;
-        //   if(nums[mid] == target){
-        //     first = mid;
-        //     high = mid -1;
-        //   }
-        //   else if (nums[mid] < target){
-        //     low = mid +1;
-        //   }
-        //    else {
-        //      high = mid + 1;
-        //   }      
-        // } 
-
-
 
         // Find last occurrence
-        low = 0, high = n - 1;
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            if (nums[mid] == target) {
+        // low = 0, high = n - 1;
+        // while (low <= high) {
+        //     int mid = low + (high - low) / 2;
+        //     if (nums[mid] == target) {
+        //         last = mid;
+        //         low = mid + 1;  // keep looking right
+        //     } else if (nums[mid] < target) {
+        //         low = mid + 1;
+        //     } else {
+        //         high = mid - 1;
+        //     }
+        // }
+
+        low = 0, high = n-1;
+        while(low <= high){
+            int mid = low + (high - low)/2;
+            if(nums[mid] == target){
                 last = mid;
-                low = mid + 1;  // keep looking right
-            } else if (nums[mid] < target) {
                 low = mid + 1;
-            } else {
+
+            }
+            else if( nums[mid] < target ){
+                low = mid +1;
+
+            }
+            else{
                 high = mid - 1;
             }
         }
-
         return {first, last};
     }
 };
