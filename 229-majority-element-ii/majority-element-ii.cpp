@@ -3,10 +3,10 @@ public:
     vector<int> majorityElement(vector<int>& nums) {
         int n = nums.size();
         
-        int maj1    = NULL;
+        int maj1 = NULL;
         int count1 = 0;
 
-        int maj2    = NULL;
+        int maj2 = NULL;
         int count2 = 0;
         int freq = floor(n/3);
         
