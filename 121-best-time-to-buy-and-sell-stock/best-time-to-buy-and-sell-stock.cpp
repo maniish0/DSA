@@ -1,15 +1,14 @@
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
-        int mini = prices[0];
+        int miniprice = prices[0];
         int maxprofit = 0;
         int n = prices.size();
 
-    
-        for (int i= 0; i<n; i++){
-            int cost = prices[i]- mini; //profit if we sold at the same day
-            maxprofit =max(maxprofit , cost);  //update best profit
-            mini = min(mini,prices[i]);  // update lowest price
+        for(int i = 0; i < n; i++){
+            int cost = prices[i] - miniprice;
+            maxprofit = max(maxprofit , cost);
+            miniprice = min(prices[i], miniprice);
         }
         return maxprofit;
     }
