@@ -1,18 +1,17 @@
 class Solution {
 public:
     int reverse(int x) {
-        long num =0 , digit =0; 
+        long newX = 0, remDigits = 0;
         while(x != 0){
-         digit = x % 10;
-         num = num*10+digit;
-         x=x/10;
+            remDigits = x % 10;
+            newX = newX * 10 + remDigits;
+            x /= 10;
         }
-
-
-        if(num > INT_MAX || num < INT_MIN){
+        if(newX > INT_MAX || newX < INT_MIN){
             return 0;
         }
 
-     return num;
+        return newX;
+        
     }
 };
