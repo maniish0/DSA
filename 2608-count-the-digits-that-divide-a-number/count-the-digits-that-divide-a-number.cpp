@@ -1,16 +1,16 @@
 class Solution {
 public:
     int countDigits(int num) {
-        int count=0;
-        int copy=num;
-        int res=0;
-        while(copy>0){
-            res=copy%10;
-            copy/=10;
-            if(res>0 && num%res==0){
-                count++;
+        int cnt = 0;
+        int x = num;
+
+        while (x != 0) {
+            int rem = x % 10;
+            if (rem != 0 && num % rem == 0) { // avoid divide by zero
+                cnt++;
             }
+            x = x / 10;
         }
-        return count;
+        return cnt;
     }
 };
