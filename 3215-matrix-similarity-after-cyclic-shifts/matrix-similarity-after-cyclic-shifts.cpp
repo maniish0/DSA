@@ -4,10 +4,11 @@ public:
         vector<vector<int>> temp = mat;
         int m = mat.size();
         int n = mat[0].size();
-        k = k % n; // very import line after k rotation the outputs are repeating
-                  // itself again and again.
+        k = k % n;  
+        // very import line becouse after k rotation the outputs are repeating
+        // itself again and again so we dont need to do the operation after k rotations.
 
-            for (int i = 0; i < mat.size(); i++) {
+        for (int i = 0; i < mat.size(); i++) {
             if (i % 2 == 0) {
                 rotate(rbegin(mat[i]), rbegin(mat[i]) + k, rend(mat[i]));
             } else {
