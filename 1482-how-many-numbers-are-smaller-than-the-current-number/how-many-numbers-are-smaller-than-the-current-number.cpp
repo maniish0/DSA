@@ -11,7 +11,7 @@ public:
 
         vector<int> result;
         for (int num : nums)
-            result.push_back(num == 0 ? 0 : freq[num - 1]);
+            result.push_back(num == 0 ? 0 : freq[num - 1]);// freq[nums -1] means curr i se 1 kam ki freq
 
         return result;
     }
