@@ -20,12 +20,15 @@ public:
             }
             curr = curr -> next;
         }
+
         if(arr.empty()){
             return nullptr;
         }
-         ListNode* result = new ListNode(arr[0]);
+
+        ListNode* result = new ListNode(arr[0]);
          curr = result;
-         for(int i = 1; i < arr.size(); i++){
+
+         for(int i = 0+1; i < arr.size(); i++){
             ListNode* node = new ListNode(arr[i]);
             curr->next = node;
             curr = curr-> next;
