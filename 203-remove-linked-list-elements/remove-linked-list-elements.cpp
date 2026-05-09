@@ -11,29 +11,10 @@
 class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) {
-        vector<int> arr;
-        ListNode* curr = head;
 
-        while(curr){
-            if(curr -> val != val){
-                arr.push_back(curr->val);
-            }
-            curr = curr -> next;
-        }
+        if (head == nullptr) return nullptr;
 
-        if(arr.empty()){
-            return nullptr;
-        }
-
-        ListNode* result = new ListNode(arr[0]);
-         curr = result;
-
-         for(int i = 0+1; i < arr.size(); i++){
-            ListNode* node = new ListNode(arr[i]);
-            curr->next = node;
-            curr = curr-> next;
-        }
-        return result;
-
+        head->next = removeElements(head->next, val);
+        return head->val != val ? head : head->next;
     }
 };
