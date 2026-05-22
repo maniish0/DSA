@@ -2,23 +2,17 @@ class Solution {
 public:
     vector<string> sortPeople(vector<string>& names, vector<int>& heights) {
 
-        priority_queue<pair<int,string>> pq;
-
         int n = names.size();
+        vector<pair<int, string>> people(n);
 
-        for(int i = 0; i < n; i++) {
-            pq.push({heights[i], names[i]});
+        for (int i = 0; i < n; i++) {
+            people[i] = {heights[i], names[i]};
         }
-
-        int i = 0;
-
-        while(!pq.empty()) {
-
-            names[i++] = pq.top().second;
-
-            pq.pop();
+        sort(people.begin(), people.end(), greater<>());
+        vector<string> res;
+        for (auto& p : people) {
+            res.push_back(p.second);
         }
-
-        return names;
+        return res;
     }
 };
